@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <% include ./partials/sidebar %>
+ 
+<div class="content">
+   
+<div  class='content-div'>
+        <div class="container">
+            <div class="card allSidesSoft" style="background:rgb(249, 249, 249)">
+              <div class="card-body">
+
+              
+                <div class="d-flex pc">
+                    <div class="image-container">
+                        <img src="/uploads/<%= logger.img %>" id="user-profile-image" style="width: 150px; height: 150px" class="img-thumbnail allSidesSoft" />
+                    </div>
+                    <a href="/addInfo"><button style="float:right" type="button" class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-edit"></span> Edit
+                    </button></a>
+                </div>
+              
+
+              
+
+                <br />
+                <br />
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">Email</div>
+                    <div class="panel-body"> <%= logger.email%> </a></div>
+                  </div>
+                </div>
+            
+
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">Gender</div>
+                    <div class="panel-body" style="text-transform: capitalize;"> <%= logger.gender%></div>
+                  </div>
+                </div>
+            
+
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">Name</div>
+                    <div class="panel-body"> <%= logger.name%></div>
+                  </div>
+                </div>
+            
+
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">City</div>
+                    <div class="panel-body"> <%= logger.city%></div>
+                  </div>
+                </div>
+            
+
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">D.O.B</div>
+                    <div class="panel-body null-link" id="dobtext"><%=logger.dob%></div>
+                  </div>
+                </div>
+            
+
+            
+                <div class="col-sm-6">
+                  <div class="panel panel-default allSidesSoft panel-main-div">
+                    <div class="panel-heading">Phone</div>
+                    <div class="panel-body"><%= logger.phone%></div>
+                  </div>
+                </div>
+            
+
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<% include ./partials/logout %>
+</body>
+</html>

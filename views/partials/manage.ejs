@@ -1,0 +1,50 @@
+
+<div id="user">
+    <ul>
+        <% if(comm.users != 'undefined') { %>
+        <% comm.users.forEach(function(user){ %>
+        <li class="list-group-item text-info">
+            <div>
+                    <a href="/profile/showUser?id=<%=user.id%>"><img class="img2" src="/uploads/<%= user.img %>"  style="border-radius:50% ;" width="70" height="70"> </a>
+                    <a href="/profile/showUser?id=<%=user.id%>" >
+                            <B style="padding-left:20px;color:black">
+                                <%= user.name %></B></a>
+                      <% if(flag === true) {%>          
+                                <span class="badge" style="float:right"><a href="#" style="color:white">Promote</a></span>
+            <span class="badge" style="float:right"><a href="#" style="color:white">Remove</a></span>
+             </div>
+            <%  } %>
+        </li>
+        <% }); %>
+        <% } %>
+    </ul>
+</div>
+<div id="admin" style="display:none">
+    <ul>
+        <li class="list-group-item text-info"><a href="#">
+                <%= comm.owner.name %></a></li>
+        <% if(comm.admins != 'undefined') { %>
+        <% comm.admins.forEach(function(admin){ %>
+        <li class="list-group-item text-info"><a href="#">
+                <b>
+                    <%= admmins.name %></b></a>
+            <span class="badge"><a href="#" style="color:white">Demote</a></span>
+            <span class="badge"><a href="#" style="color:white">Remove</a></span>
+        </li>
+        <% }); %>
+        <% } %>
+    </ul>
+</div>
+<div id="request" style="display:none">
+    <ul>
+        <% if(comm.request != 'undefined') { %>
+        <% comm.request.forEach(function(req){ %>
+        <li class="list-group-item text-info"><a href="#">
+                <b>
+                    <%= req.name %></b></a>
+            <span class="badge"><a href="#" style="color:white">Cancel</a></span>
+        </li>
+        <% }); %>
+        <% } %>
+    </ul>
+</div>

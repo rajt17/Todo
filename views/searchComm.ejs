@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add User</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<!--<% include ./partials/header %>-->
+<% include ./partials/sidebar %>
+<div class="content" >
+    <div class="panel panel-primary" style="padding-bottom:15px;  padding-top:15px; background-color: steelblue">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <a href="/profile/commHome" class="btn btn-info btn-sm">
+                <span class="glyphicon glyphicon-th"></span> 
+              </a>
+              <a href="/profile/searchComm" class="btn btn-info btn-sm">
+                  <span class="glyphicon glyphicon-search"></span> 
+                </a>
+               
+          </div>
+      </div>
+<div class="container" style="padding:0; width:70%;padding-right:10px; padding-top:50px;">
+    
+    <% if( comms !='undefined') {%>
+        <%comms.forEach(function(comm){ %>
+            <% var flag1 = flag2 = flag3= 'true'; %>
+            <%comm.users.forEach(function(user) {%>
+                <% if(user.id.equals(logger.id)) {%>
+                    <% flag2 = 'false'; %>
+                    <%}%>
+                 <% }); %>
+                 <%comm.request.forEach(function(req) {%>
+                    <% if(req.id.equals(logger.id)) {%>
+                        <% flag2 = 'false'; %>
+                        <%}%>
+                    <% }); %>
+                     <%comm.admins.forEach(function(adm) {%>
+                        <% if(adm.id.equals(logger.id)) {%>
+                            <% flag3 = 'false'; %>
+                            <%}%>
+                     <% }); %>
+                
+            <%if (flag1 === 'true' && flag2 === 'true' && flag3 === 'true') { %>
+    <div class="panel panel-default" style="padding:10px">
+                <div class="row">
+                        <div class="col-sm-6 image-container"><img src="/uploads/<%=comm.img%>" style="width: 100px; height: 100px"> <a htef=""><%=comm.name%></a></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-2" >
+                            <% if(comm.permission != 'D' ){ %>
+                                <button type="button"  class="btn btn-sm btn-primary"><a href="/profile/joinComm?name=<%= comm.name%>&user=<%= logger._id%>">Request To Join</a></button>
+                            <%} else { %>
+                                <button type="button" class="btn btn-sm btn-primary"><a href="/profile/joinComm?name=<%= comm.name%>&user=<%= logger._id%>">Join</a></button>
+                            <% } %>
+                        </div>
+                        
+                      </div>
+        </div> 
+        <% } %>
+    <% }); %>  
+    <% } %>
+</div>
+    </div>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--<% include ./partials/header %>-->
+</head>
+<% include ./partials/sidebar %>
+<div class="content">
+    <div class="panel panel-primary" style="padding-bottom:15px;  padding-top:15px; background-color: steelblue">
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="d-flex pc">
+                    <div class="image-container">
+                        <img src="/uploads/<%= comm.img %>" id="user-profile-image" style="width: 150px; height: 150px"
+                            class="img-thumbnail allSidesSoft" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-9">
+                <h1>
+                    <%= comm.name%>
+                </h1>
+            </div>
+            <div class="dropdown dropleft" style="float:right">
+                    <button class="btn btn-primary dropdown-toggle-sm" type="button" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-th-list"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li><a href="/profile/commHome/showComm?id=<%=comm.id%>">Discussion</a></li>
+                      <li><a href="/profile/commHome/manageComm?id=<%=comm.id%>">ManageCommunity</a></li>
+                      <li><a href="/profile/commHome/listMembers?id=<%=comm.id%>">Members</a></li>
+                    </ul>
+                  </div>
+        </div>
+        <hr>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="#" id="usr"> Users(<%=comm.users.length%>)</a>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <a href="#" id="adm"> Admin(<%=comm.admins.length%>)</a>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6"></div>
+        <hr>
+        <% include ./partials/manage %>
+    </div>
+</div>
+<script>
+$("#usr").click(function(){
+  
+  $("#admin").hide();
+  $("#request").hide();
+  $("#user").show();
+});
+
+$("#adm").click(function(){
+  $("#user").hide();
+  $("#request").hide();
+  $("#admin").show();
+});
+</script>
+</body>
+</html>

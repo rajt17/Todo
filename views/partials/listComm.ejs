@@ -1,0 +1,36 @@
+<% if(communities != 'undefined') { %>
+<% communities.forEach(function(list){ %>
+    <%list.users.forEach(function(user) {%>
+        <% if(user.id.equals(logger.id)) {%>
+            <li class="list-group-item text-info"><a id="list" href="/profile/commHome/showComm?id=<%=list._id %>" style="color:black"><%= list.name %></a>
+
+                <% if( user._id.equals(list.owner)) { %>
+                    <span class="badge"><a href="#" style="color:aliceblue">
+                            <span class="glyphicon glyphicon-edit"></span>
+                          </a>
+                <% } %>
+               
+            </li>
+            <%}%>
+            <% }); %>
+     <%list.request.forEach(function(user) {%>
+                <% if(user.id.equals(logger.id)) {%>
+                    <li class="list-group-item text-info"><a id="list" href="/profile/commHome/showComm?id=<%=list._id %>" style="color:black"><%= list.name %></a>
+        
+                        <% if( user._id.equals(list.owner)) { %>
+                            <span class="badge"><a href="#" style="color:aliceblue">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                  </a>
+                        <% } %>
+                       
+                    </li>
+                    <%}%>
+                    <% }); %>
+<% }); %>
+<% } %>
+<!--<script>
+    $("#list").click(function(){
+        val=$("#list").text();
+        $("#list").attr("href","/profile/commHome/manageComm?name="+val);
+    })
+</script>-->

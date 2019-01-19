@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add User</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+
+<!--<% include ./partials/header %>-->
+</head>
+<% include ./partials/sidebar %>
+<div class="content">
+    <div class="panel panel-primary" style="padding-bottom:15px;  padding-top:15px; background-color: steelblue">
+        
+      </div>
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="d-flex pc">
+            <div class="image-container">
+                <img src="/uploads/<%= comm.img %>" id="user-profile-image" style="width: 150px; height: 150px" class="img-thumbnail allSidesSoft" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9 col-md-9 col-lg-9" >
+      <h1><%= comm.name%></h1>
+    </div>
+  </div>
+  <hr>
+      <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12" style="padding-bottom:5px;">
+        <nonLink class="manageCommunity-head-btn " style="cursor: context-menu;color:steelblue">
+            <b> Manage Community</b>
+        </nonLink>
+        <a class="pc" href="/community/editComm/?id=<%=comm.id%>" style="float:right;font-weight:600;margin-right:15px">
+          Edit Community
+        </a>
+        
+      </div>
+    
+      <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12" style="padding:10px 0 0 0;">
+<hr>
+          <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3" style="border: 1px solid whitesmoke">
+              <ul type="none">
+                <B>
+                <Li><a style="color:black" href="#" id="usr">Users(<%if(typeof users != 'undefined') {%><%= users.length %> <%}%>)</a></Li>
+                <br>
+                <Li><a style="color:black" href="#" id="adm">Admin(<%if(typeof admins != 'undefined') {%><%= admins.length %> <%}%>)</a></Li>
+                <br>
+                <Li><a style="color:black" href="#" id="req">Request(<%if(typeof requests != 'undefined') {%><%= requests.length %> <%}%>)</a></Li></B>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-xs-9 col-md-9 col-lg-9"> 
+             
+            </div>
+            </div>
+          </div>
+        </div>
+</div>
+</div>
+<script>
+$("#usr").click(function(){
+  
+  $("#admin").hide();
+  $("#request").hide();
+  $("#user").show();
+});
+
+$("#adm").click(function(){
+  $("#user").hide();
+  $("#request").hide();
+  $("#admin").show();
+});
+$("#req").click(function(){
+  $("#user").hide();
+  $("#admin").hide();
+  $("#request").show();
+});
+
+
+</script>
+</body>
+    
+</html>

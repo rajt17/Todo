@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add User</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+  <script>
+  $(document).ready(function(){
+ 
+});
+ </script>
+
+<!--<% include ./partials/header %>-->
+</head>
+<div class="content" >
+<div class="align-center-all">
+        <div class="container">
+<div class="profile-pic-center-main-div mobile">
+  <img src="/Upload/Profile/default.png" class="profile-pic-center allSides" />
+</div>
+
+
+<div class='container'>
+  <div style="margin-top:30px;">
+    <div class="col-12">
+          <div class="card allSidesSoft">
+              <div class="card-body">
+                <div class="d-flex">
+                    <form class="image-container" method="post" action="/updateProfilePic" enctype="multipart/form-data" id="profilepicform">
+                        <img src="/uploads/<%= logger.img%>" id="user-profile-image" style="width: 150px; height: 150px" class="img-thumbnail allSidesSoft" />
+                        <div class="middle">
+                            <input id="file"  name="image" type="file" />
+                            <br>
+                            <input type="submit" value="Update Profile Pic" class="btn btn-success">
+                        </div>
+                    </form>
+                    
+                </div>
+
+                <br />
+                <form method="post" action="/addInfo">
+                  <div class="panel-group">
+                    <!--Form panel-->
+                    <div class="panel panel-default editUserPanel">
+                      <div class="panel-heading">Basic Info</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                    <label>Email :</label>
+                                    <input type="text" value="<%= logger.email%>" class="form-control" name="email" disabled="true"  />
+                            </div>
+                            <div class="form-group">
+                                <label>Name :</label>
+                                <input type="text" value="<%= logger.name%>" class="form-control" name="name" autocomplete="off" required />
+                            </div>
+                            <div class="form-group col-sm-5" style="padding:0">
+                                <label>DOB :</label>
+                                <input class="form-control dobDate" id="date" value='' name="dob" max="2019-01-01" placeholder="MM/DD/YYYY" type="date" autocomplete="off" required/>
+                            </div>
+                            <div class="form-group col-sm-5 col-sm-push-2" style="padding:0">
+                                    <label>Gender :</label>
+                                    <select name="gender" class="form-control">
+                                        <optgroup label="Select Gender">
+                                    
+                                        <option value="male">Male</option>
+                                    
+
+                                    
+                                        <option value="female">Female</option>
+                                    
+
+                                    
+                                        <option value="transgender">Transgender</option>
+                                    
+                                    </optgroup>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default editUserPanel">
+                      <div class="panel-heading">Contact Info</div>
+                        <div class="panel-body">
+                          <div class="form-group">
+                                  <label>Phone :</label>
+                                  <input type="text" value="<%= logger.phone%>" class="form-control" name="phone" maxlength="10" required />
+                          </div>
+                          <div class="form-group">
+                                  <label>City :</label>
+                                  <input type="text" value="<%= logger.city%>" class="form-control" name="city" required />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default editUserPanel">
+                        <div class="panel-heading">Personal Info</div>
+                          <div class="panel-body">
+
+                            <div class="form-group">
+                              <label>Interests :</label>
+                              <div class="tag-conatiner-custom-div">
+                                <select id="interestsEditor" name='interest' class="form-control input-sm select2-multiple" style="width:100%" multiple>
+                                  <!--Tags option appended here-->
+                                  
+                                    
+
+                                  
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                                    <label>Tell us a bit more about your journey:</label>
+                                    <textarea required type="text" class="form-control" name="journey"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                    <label>What are your expectations from the communities?</label>
+                                    <textarea type="text" class="form-control" name="expectations" required></textarea>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      <br />
+
+                      <div class="form-group">
+                        
+                              <a href="/Profile" class="btn btn-danger pull-right btnEditForm" style="margin:1px">Cancel</a>
+                              <input type="submit" class="btn btn-primary pull-right btnEditForm" style="margin:1px" value="Update" />
+                      </div>
+
+                    </div>
+                </form>
+              </div>
+         </div>
+      </div>
+  </div>
+</div>
+
+<br />
+
+</div>
+</div>
+</div>
+</div>
+</html>

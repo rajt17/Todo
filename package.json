@@ -1,0 +1,30 @@
+{
+  "name": "p4own",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "datatables-query": "^0.2.0",
+    "datatables.net-dt": "^1.10.19",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "install": "^0.12.2",
+    "mongoose": "^5.4.1",
+    "mongoose-datatable": "^1.0.6",
+    "mongoose-datatables": "^3.2.0",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "window": "^4.2.5"
+  }
+}

@@ -1,0 +1,77 @@
+<div class="container">
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add User</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+
+<!--<% include ./partials/header %>-->
+</head>
+<% include ./partials/sidebar %>
+<div class="content" style="padding-top:50px">
+    <div style="margin-top:20px;margin-bottom:50px">
+      <div class="col-sm-3 col-md-3 col-xs-4 col-lg-2">
+        <a class="communitymembers-head-btn" onclick="AllAdminList()" id="admins-list-btn">
+          Admins (3)
+        </a>
+      </div>
+      <div class="col-sm-3 col-md-3 col-xs-4 col-lg-2">
+        <a class="communitymembers-head-btn" onclick="AllUsersList()" id="users-list-btn">
+          Users (3)
+        </a>
+      </div>
+      <div class="col-sm-12">
+          <div class='col-sm-12 col-xs-12 allcoms community-user-div OwnerDivMain' style='margin-top:5px;'>
+               <div class='col-sm-2 col-xs-5' style='padding:5px;'>
+                   <a href='/viewprofile/5ba5ace5393e737dbe66f5cb'>
+                     <img src='/Upload/Profile/default.png' class='community-member-pic'>
+                   </a>
+                   <span class="label label-primary">Owner</span>
+               </div>
+               <div class='col-sm-9 col-xs-7 scrollable'>
+                   <a class='comusername' href='/viewprofile/5ba5ace5393e737dbe66f5cb'>Arun Goyat</a>
+               </div>
+          </div>
+          <div id="comUsersList">
+    
+          </div>
+        </div>
+      </div>
+     <div class="container" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</html>

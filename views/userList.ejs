@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
+    </script>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<% include ./partials/sidebar %>
+<div class="content">
+        <div class="panel panel-primary" style="padding-bottom:15px;  padding-top:15px; background-color: steelblue">
+
+            </div>
+    
+                <div class="container">
+                <body style="font-family: Arial;">
+                    <form id="form1" runat="server">
+                        <div style="width: 92%; border: 1px solid black; padding: 5px">
+                    <table id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Email
+                                </th>
+                                <th>Phone
+                                </th>
+                                <th>City
+                                </th>
+                                <th>Role
+                                </th>
+                                <th>
+                                    Profile Pic
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <% users.forEach(function(user){ %>
+                        <tbdody>
+                            <tr>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                                <td>
+                                    <%= user.phone %>
+                                </td>
+                                <td>
+                                    <%= user.city %>
+                                </td>
+                                <td>
+                                    <%= user.roleoptions %>
+                                </td>
+                                <td>
+                                    <img src="/uploads/<%=user.img%>" style="width: 70px; height: 70px">
+                                </td>
+                            </tr>
+                        </tbdody>
+                        <% }); %>
+
+                    </table>
+                </div>
+            </form>
+        </body>
+    </div>
+
+</html>
